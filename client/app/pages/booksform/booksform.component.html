@@ -1,0 +1,85 @@
+<app-toast [message]="toast.message"></app-toast>
+
+<div class="container">
+  <app-page-header [title]="title"></app-page-header>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 col-centered">
+      <div class="form-wrap">
+        <form [formGroup]="BooksForm" (ngSubmit)="insertbooks()">
+          <div class="input-wrap">
+            <mat-form-field>
+              <input matInput #input type="text" minlength="2" maxlength="30" name="Name"
+               [formControl]="Name" placeholder="Name">
+              <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+              <mat-error *ngIf="Name.hasError('minlength')">
+                Name must contain at least 2 characters
+              </mat-error>
+              <mat-error *ngIf="Name.hasError('pattern')">
+                Name can contain only letters and numbers
+              </mat-error>
+              <mat-error *ngIf="Name.hasError('required')">
+                Name is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+            <div class="input-wrap">
+            <mat-form-field>
+              
+              <input matInput #input type="text" minlength="2" maxlength="30" name="Author"
+               [formControl]="Author" placeholder="Author">
+              <mat-hint align ="end">{{input.value?.length || 0}}/30</mat-hint>
+              <mat-error *ngIf="Author.hasError('minlength')">
+                Author must contain at least 2 characters
+              </mat-error>
+              <mat-error *ngIf="Author.hasError('pattern')">
+                Author can contain only letters and numbers
+              </mat-error>
+              <mat-error *ngIf="Author.hasError('required')">
+                Author is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+
+
+          </div>
+          <div class="input-wrap">
+
+                <mat-form-field>
+                    <input matInput [formControl]="date"  [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+          </div>
+
+          <div class="input-wrap">
+              <mat-checkbox   [formControl]="published" >published</mat-checkbox>
+            
+          </div>
+
+
+          <div class="input-wrap">
+            <mat-form-field>
+              <input matInput type="number" name="Quantity_of_books_available" [formControl]="Quantity_of_books_available"
+               placeholder="Quantity_of_books_available">
+              <mat-error *ngIf="Quantity_of_books_available.hasError('minlength')">
+                Quantity_of_books_available must be at least 6 characters long
+              </mat-error>
+              <mat-error *ngIf="Quantity_of_books_available.hasError('required')">
+                Quantity_of_books_available is
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+          <button mat-raised-button type="submit" [disabled]="!BooksForm.valid" color="accent">
+            <i class="fa fa-paper-plane"></i> Insertbooks
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

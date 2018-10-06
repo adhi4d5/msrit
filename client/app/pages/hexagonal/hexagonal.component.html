@@ -1,0 +1,40 @@
+<header>
+	<ul>
+		<li>
+			<button mat-button [routerLink]="['']">
+      			<mat-icon>keyboard_backspace</mat-icon>
+			</button>
+		</li>
+		<li><h1>Hexagonal Nucleus</h1>
+		<p><i>Focus on Red Cells</i></p>
+		</li>
+	</ul>
+	<div class="clearfix"></div>
+</header>
+
+<section class="quadrant-view">
+    <div class="inner-container">
+      <div class="content">
+
+      		<div class="svg-container">
+				<svg #hexachild style="margin-left: -11%;" >
+				    <filter id="f3" x="0" y="0" width="200%" height="200%">
+				        <feOffset result="offOut" in="SourceAlpha" dx="10" dy="10" />
+				        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="7" />
+				        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+				      </filter>
+				</svg>
+			</div>
+
+			<div class="asset-value">
+				<mat-card *ngFor="let sidec of side_component; let i=index;" [ngClass]="'one'+i">
+				    <mat-card-content >
+				      <mat-card-title>{{sidec.display_txt}}</mat-card-title>
+				      <mat-card-subtitle>Updated on: {{sidec.activity_date | date:'yyyy-MM-dd HH:mm a z':'+0900'}}</mat-card-subtitle>
+				    </mat-card-content>
+			    </mat-card>
+			</div>
+
+		</div>
+	</div>
+</section>
