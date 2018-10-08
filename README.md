@@ -1,5 +1,5 @@
 # MEAN-stack-authentication
-MEAN stack authentication boilerplate with Angular5 and AngularMaterial2.
+MEAN stack authentication boilerplate with Angular5 and AngularMaterial 6.4.7.
 
 ## Prerequisites
 1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
@@ -20,5 +20,3 @@ A window will automatically open at [localhost:4200](http://localhost:4200). Ang
 ## Further help
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-### Author
-* [Leonardo Maglio](https://github.com/leota)
